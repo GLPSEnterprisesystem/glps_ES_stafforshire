@@ -1,0 +1,51 @@
+﻿@model glps.Models.airport_data
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>airport_data</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IATA_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IATA_code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ISO_Alpha_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISO_Alpha_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Long_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Long_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

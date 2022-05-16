@@ -1,0 +1,57 @@
+﻿@model glps.Models.airport_data
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>airport_data</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IATA_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IATA_code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ISO_Alpha_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISO_Alpha_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Long_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Long_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

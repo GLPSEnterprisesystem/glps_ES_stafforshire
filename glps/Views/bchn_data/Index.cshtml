@@ -1,0 +1,94 @@
+﻿@model IEnumerable<glps.Models.bchn_data>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Fore_Nane)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Family_Name)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Passport_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Terrorism)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Narcotics)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Smuggling)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Illegal_Immigration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Revenue)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fore_Nane)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Family_Name)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Nationality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Passport_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Terrorism)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Narcotics)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Smuggling)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Illegal_Immigration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Revenue)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

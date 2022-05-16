@@ -1,0 +1,73 @@
+﻿@model glps.Models.appin_data
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>appin_data</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Seat_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seat_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fore_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fore_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Family_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Family_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passport_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country_of_Issue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country_of_Issue)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,223 @@
+﻿@model glps.Models.bchn_data
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>bchn_data</h4>
+    <hr />
+  
+  
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Fore_Nane)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Fore_Nane)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Family_Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Family_Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Gender)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DOB)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DOB)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nationality)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nationality)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Passport_number)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Passport_number)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Terrorism)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Terrorism)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Narcotics)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Narcotics)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Smuggling)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Smuggling)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Illegal_Immigration)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Illegal_Immigration)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Revenue)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Revenue)
+                </dd>
+
+            </dl>
+        </div>
+        <div class="col">
+            <div id="chartContainer"></div>
+
+            <script type="text/javascript">
+
+		window.onload = function () {
+			var chart = new CanvasJS.Chart("chartContainer", {
+				theme: "light2",
+				animationEnabled: true,
+				title: {
+					text: "Risk Analysis Report"
+				},
+				subtitles: [
+					{ text: "Try Resizing the Browser" }
+				],
+				data: [
+				{
+					type: "pie", //change type to bar, line, area, pie, etc
+                        dataPoints: [
+                            { y: 5, label: "Terrorism" },
+                            { y: 10, label: "Narcotics" },
+                            { y: 10, label: "Smuggling" },
+                            { y: 20, label: "Illegal Immigration" },
+							{ y: 15, label: "Revenue" },
+                           ]
+                                        //Uncomment below line to add data coming from the controller.
+					//dataPoints: @Html.Raw(ViewBag.DataPoints),
+				}
+				]
+			});
+			chart.render();
+		};
+            </script>
+        </div>
+
+        @*<div class="jumbotron">
+            <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+        </div>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script>
+
+
+            $(document).ready(function () {
+                $.getJSON("/bchn_data/GetData", function (data) {
+
+
+
+                    Highcharts.chart('container', {
+                        chart: {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false,
+                            type: 'pie'
+                        },
+                        title: {
+                            text: 'Gender Ratio'
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                    style: {
+                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                    }
+                                }
+                            }
+                        },
+                        series: [{
+                            name: 'Brands',
+                            colorByPoint: true,
+                            data: [{
+                                name: 'terrorism',
+                                y: data.terrorism
+                            }, {
+                                name: 'narcotics',
+                                y: data.narcotics
+                            }, {
+                                name: 'smuggling',
+                                y: data.smuggling
+                                }
+                                , {
+                                    name: 'illegal_Immigration',
+                                    y: data.illegal_Immigration
+                                }
+                                , {
+                                    name: 'revenue',
+                                    y: data.revenue
+                                }]
+                        }]
+                    });
+                });
+            });
+
+
+        </script>*@
+        <head>
+            <meta name="viewport" content="width=device-width" />
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+            <title>Index</title>
+        </head>
+    </div>
+        
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

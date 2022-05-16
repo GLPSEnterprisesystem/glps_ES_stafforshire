@@ -1,0 +1,113 @@
+﻿@model glps.Models.bchn_data
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>bchn_data</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fore_Nane)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fore_Nane)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Family_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Family_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passport_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Terrorism)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Terrorism)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Narcotics)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Narcotics)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Smuggling)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Smuggling)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Illegal_Immigration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Illegal_Immigration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Revenue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Revenue)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

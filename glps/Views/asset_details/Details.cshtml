@@ -1,0 +1,75 @@
+﻿@model glps.Models.asset_details
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>asset_details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departure)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Arrival)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Arrival)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Terminal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Terminal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aircraft)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aircraft)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Crew)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Crew)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
